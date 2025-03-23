@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Management System Dashboard</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url(images/1_4cCVl11ZuULno6nH0Far1A.png); /* Replace 'background_image.jpg' with the path to your image */
+        background-size: cover;
+        background-position: center;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 20px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+    .button:hover {
+        background-color: #45a049;
+    }
+    .button img {
+        width: 100px;
+        height: 100px;
+    }
+    .button-text {
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="button" id="insertButton">
+        <img src="images/2888451.png" alt="Insert Icon">
+        <div class="button-text">Insert</div>
+    </div>
+    <div class="button" id="viewButton">
+        <img src="images/digital-library-icon-3d-illustration-from-elearning-collection-creative-digital-library-3d-icon-web-design-templates-infographics-more_676904-2731.avif" alt="View Icon">
+        <div class="button-text">View</div>
+    </div>
+    <div class="button" id="deleteButton">
+        <img src="images/delete-icon-vector.jpg" alt="Delete Icon">
+        <div class="button-text">Delete</div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("insertButton").addEventListener("click", function() {
+        window.location.href = "lib_insert.html";
+    });
+
+    document.getElementById("viewButton").addEventListener("click", function() {
+        window.location.href = "view_data.php";
+    });
+
+    document.getElementById("deleteButton").addEventListener("click", function() {
+        window.location.href = "lib_delete.html";
+    });
+</script>
+</body>
+</html>

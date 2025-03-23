@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Insert Data</title>
+</head>
+<style>
+    html, body {
+    min-height: 100%;
+    }
+    body, div, form, input, select, p { 
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+    }
+    h1 {
+    text-align: center;
+    margin: 0;
+    font-weight: 400;
+    }
+    h3 {
+    margin: 12px 0;
+    color: #8ebf42;
+    }
+    .main-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    }
+    form {
+    width: 100%;
+    padding: 20px;
+    }
+    fieldset {
+    border: none;
+    border-top: 1px solid #8ebf42;
+    }
+    .account-details, .Author-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+    .account-details >div, .Author-details >div >div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    }
+    .account-details >div, .Author-details >div, input, label {
+    width: 100%;
+    }
+    label {
+    padding: 0 5px;
+    text-align: right;
+    vertical-align: middle;
+    }
+    input {
+    padding: 5px;
+    vertical-align: middle;
+    }
+    .checkbox {
+    margin-bottom: 10px;
+    }
+    select, .children, .gender, .bdate-block {
+    width: calc(100% + 26px);
+    padding: 5px 0;
+    }
+    select {
+    background: transparent;
+    }
+    .gender input {
+    width: auto;
+    } 
+    .gender label {
+    padding: 0 5px 0 0;
+    } 
+    .bdate-block {
+    display: flex;
+    justify-content: space-between;
+    }
+    .birthdate select.day {
+    width: 45px;
+    }
+    .birthdate select.mounth {
+    width: calc(100% - 94px);
+    }
+    .birthdate input {
+    width: 38px;
+    vertical-align: unset;
+    }
+    .checkbox input, .children input {
+    width: auto;
+    margin: -2px 10px 0 0;
+    }
+    .checkbox a {
+    color: #8ebf42;
+    }
+    .checkbox a:hover {
+    color: #82b534;
+    }
+    button {
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px auto;
+    border-radius: 5px; 
+    border: none;
+    background: #8ebf42; 
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    }
+    a{
+     width: 100%;
+    padding: 10px 0;
+    margin: 10px auto;
+    border-radius: 5px; 
+    border: none;
+    background: #8ebf42; 
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    }
+    button:hover {
+    background: #82b534;
+    }
+    @media (min-width: 568px) {
+    .account-details >div, .Author-details >div {
+    width: 50%;
+    }
+    label {
+    width: 40%;
+    }
+    input {
+    width: 60%;
+    }
+    select, .children, .gender, .bdate-block {
+    width: calc(60% + 16px);
+    }
+    }
+    </style>
+<body>
+    <div class="main-block">
+        <form  action="session.php" method="post">
+            <h1>ADD BOOK</h1>
+            <fieldset>
+                <legend><h3>Book Details</h3></legend>
+                <div class="account-details">
+                    <div><label>Book ID*</label><input type="text" id="bookId" name="bookId" required></div>
+                    <div><label>Author*</label><input type="text" id="author" name="author" required></div>
+                    <div><label>Book Name*</label><input type="text" id="bookName" name="bookName" required></div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend><h3>Author Details</h3></legend>
+                <div class="Author-details">
+                    <div>
+                        <div><label>Author Name*</label><input type="text" id="authorName" name="authorName" required></div>
+                        <div><label>Author ID*</label><input type="text" id="authorId" name="authorId" required></div>
+                        <div><label>Street</label><input type="text" id="street" name="street"></div>
+                        <div><label>City*</label><input type="text" id="city" name="city" required></div>
+                        <div>
+                            <label>Country*</label>
+                            <select id="country" name="country" required>
+                                <option value=""></option>
+                                <option value="Sri Lanka">Sri Lanka</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Germany">Germany</option>
+                                <option value="France">France</option>
+                                <option value="USA">USA</option>
+                                <option value="UK">UK</option>
+                            </select>
+                        </div>
+                        <div><label>Website</label><input type="text" id="website" name="website"></div>
+                    </div>
+                    <div>
+                        <div>
+                            <label>Gender*</label>
+                            <div class="gender">
+                                <input type="radio" value="male" id="male" name="gender" required/>
+                                <label for="male" class="radio">Male</label>
+                                <input type="radio" value="female" id="female" name="gender" required/>
+                                <label for="female" class="radio">Female</label>
+                            </div>
+                        </div>
+                         
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="main-block">
+               
+                    <!-- Your form content here -->
+                    <button id="submitButton" type="submit">Submit</button>
+                    <!-- Add the following button to navigate to the view page -->
+                    <a id="viewButton" href="./view_data.php">View Data</a>
+                    <!-- <button id="viewButton" type="submit"  formaction="./view_data.php">View Data</button> -->
+                
+            </div>
+        </form>
+    </div>
+
+    <!-- <script>
+        // Define a linked list data structure
+        class Node {
+            constructor(data) {
+                this.data = data;
+                this.next = null;
+            }
+        }
+
+        class LinkedList {
+            constructor() {
+                this.head = null;
+            }
+
+            add(data) {
+                const newNode = new Node(data);
+                if (!this.head) {
+                    this.head = newNode;
+                } else {
+                    let current = this.head;
+                    while (current.next) {
+                        current = current.next;
+                    }
+                    current.next = newNode;
+                }
+            }
+        }
+
+        // Initialize a linked list to store the form data
+        const formDataList = new LinkedList();
+
+        // Function to handle form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const formData = {
+                bookId: document.getElementById('bookId').value,
+                author: document.getElementById('author').value,
+                bookName: document.getElementById('bookName').value,
+                authorName: document.getElementById('authorName').value,
+                authorId: document.getElementById('authorId').value,
+                street: document.getElementById('street').value,
+                city: document.getElementById('city').value,
+                country: document.getElementById('country').value,
+                website: document.getElementById('website').value,
+                gender: document.querySelector('input[name="gender"]:checked').value,
+                day: document.getElementById('day').value,
+                month: document.getElementById('month').value,
+                year: document.getElementById('year').value
+            };
+            formDataList.add(formData);
+            localStorage.setItem('formDataList', JSON.stringify(formDataList));
+            alert('Data inserted successfully!');
+            clearFormFields();
+        }
+
+        // Function to clear form fields
+        function clearFormFields() {
+            document.getElementById('bookForm').reset();
+        }
+
+        // Add event listener to the submit button
+        document.getElementById('submitButton').addEventListener('click', handleSubmit);
+
+        // Add event listener to the view button to navigate to the view page
+        document.getElementById('viewButton').addEventListener('click', function() {
+            window.location.href = 'lib_view.html';
+        });
+    </script> -->
+</body>
+</html>
